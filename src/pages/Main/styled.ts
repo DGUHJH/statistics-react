@@ -99,5 +99,18 @@ export const Bar = styled.div<BarProps>`
 export const Box = styled.div`
   width: calc(300px / 4);
   height: calc(300px / 4);
+  display: flex;
+  align-items: center;
   border: 2px #c9c9c9 solid;
+`;
+
+type BoxBarProps = {
+  marginLeft: number;
+};
+
+export const BoxBar = styled.div<BoxBarProps>`
+  width: 2px;
+  height: calc(300px / 4);
+  background: #c9c9c9;
+  margin-left: ${(props) => props.marginLeft - 1}px;
 `;

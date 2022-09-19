@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import {
   Bar,
   Box,
+  BoxBar,
   BoxContainer,
   ChipContainer,
   ChipTitleTypo,
@@ -193,7 +194,9 @@ const Main = () => {
         <BoxContainer>
           <Empty width={(((min - left) / iqr) * 300) / 4} />
           <Bar width={(((getQ('Q1') - min) / iqr) * 300) / 4} />
-          <Box />
+          <Box>
+            <BoxBar marginLeft={(((getQ('M') - getQ('Q1')) / iqr) * 300) / 4} />
+          </Box>
           <Bar width={(((max - getQ('Q3')) / iqr) * 300) / 4} />
           <Empty width={(((right - max) / iqr) * 300) / 4} />
         </BoxContainer>
